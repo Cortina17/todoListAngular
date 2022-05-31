@@ -10,7 +10,6 @@ import { TodoList } from './todoList';
 
 export class AppComponent {
   private list = new TodoList("Diego", [
-    new TodoItem("Ir al súper"),
     new TodoItem("Ir al cine", true),
     new TodoItem("Ir al fútbol"),
     new TodoItem("Ir al banco"),
@@ -30,5 +29,11 @@ export class AppComponent {
 
   get items(): readonly TodoItem[] {
     return this.list.items.filter(item => this.showComplete || !item.complete);
+  }
+
+  agregarItem(newItem: string) {
+    if (newItem != "") {
+      this.list.addItem(newItem);
+    }
   }
 }
