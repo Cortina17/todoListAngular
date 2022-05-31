@@ -10,10 +10,12 @@ import { TodoList } from './todoList';
 
 export class AppComponent {
   private list = new TodoList("Diego", [
-    new TodoItem("Ir al super"),
+    new TodoItem("Ir al súper"),
     new TodoItem("Ir al cine", true),
-    new TodoItem("Ir al futbol"),
+    new TodoItem("Ir al fútbol"),
     new TodoItem("Ir al banco"),
+    new TodoItem("Ir al médico", true),
+    new TodoItem("Ir al mercado"),
   ]);
 
   showComplete = false;
