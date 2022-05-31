@@ -12,8 +12,8 @@ export class AppComponent {
   private list = new TodoList("Diego", [
     new TodoItem("Ir al super"),
     new TodoItem("Ir al cine", true),
-    new TodoItem("Ir al futbol", true),
-    new TodoItem("Ir al banco", false),
+    new TodoItem("Ir al futbol"),
+    new TodoItem("Ir al banco"),
   ]);
 
   showComplete = false;
@@ -24,5 +24,9 @@ export class AppComponent {
 
   get itemCount(): number {
     return this.list.items.filter(item => item.complete).length;
+  }
+
+  get items(): readonly TodoItem[] {
+    return this.list.items.filter(item => this.showComplete || !item.complete);
   }
 }
