@@ -7,14 +7,16 @@ import { TodoList } from './todoList';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   private list = new TodoList("Diego", [
-    new TodoItem("Ir al super", true),
+    new TodoItem("Ir al super"),
     new TodoItem("Ir al cine", true),
     new TodoItem("Ir al futbol", true),
     new TodoItem("Ir al banco", false),
-  ]
-  )
+  ]);
+
+  showComplete = false;
 
   get username(): string {
     return this.list.user;
